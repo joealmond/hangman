@@ -1,0 +1,6 @@
+<div class="menu">
+  <h1>Hangman Game</h1>
+  <a class="start-game-button" (click)="startOrContinueGame()">
+    {{ gameStateService.gameState.status === GameStatus.MENU ? 'Start Game' : 'Back to Game' }}
+  </a>
+</div>

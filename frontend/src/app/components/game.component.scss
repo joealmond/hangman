@@ -1,0 +1,86 @@
+@use '../../styles.scss' as styles;
+
+.hangman-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    transform: scale(var(--vh-scale-factor));
+    transform-origin: top center;
+}
+  
+.form-group {
+    margin-bottom: 15px;
+  
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+    }
+}
+  
+button {
+    @include styles.primary-button;
+}
+  
+.word-display {
+    margin: 20px 0;
+    letter-spacing: 5px;
+    font-size: 24px;
+}
+  
+.error-message {
+    color: styles.$error-color;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ffeeee;
+    border-left: 4px solid styles.$error-color;
+}
+  
+.win-message {
+    color: styles.$primary-color;
+}
+  
+.lose-message {
+    color: styles.$error-color;
+}
+  
+.guessed-letters {
+    margin-bottom: 20px;
+}
+  
+.hangman-svg {
+    margin: 20px 0;
+    
+    svg {
+      width: 100px;
+      height: 120px;
+      stroke: black;
+      stroke-width: 0.2;
+      fill: none;
+    }
+}
+  
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  
+    button:nth-child(1) {
+      @include styles.secondary-button;
+    }
+    
+    button:last-child {
+      @include styles.primary-button;
+    }
+}
+
+.menu-button {
+    @include styles.menu-link;
+}

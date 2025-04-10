@@ -1,0 +1,14 @@
+<div class="hangman-svg">
+  <svg viewBox="0 0 10 12" style="stroke-width: 0.2; fill: none;">
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 9}" d="M1,11 h8" /> <!-- Floor -->
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 8}" d="M9,11 v-10" /> <!-- Column -->
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 7}" d="M9,1 h-4" /> <!-- Vertical bar -->
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 6}" d="M5,1 v2" /> <!-- Hanging rope -->
+    <circle class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 5}" cx="5" cy="4" r="1" /> <!-- Head -->
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 4}" d="M5,5 v3" /> <!-- Body -->
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 3}" d="M5,5 l-2,2" /> <!-- Left arm -->
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 2}" d="M5,5 l2,2" /> <!-- Right arm -->
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 1}" d="M5,8 l-2,2" /> <!-- Left leg -->
+    <path class="hangman-part" [ngClass]="{'active': getRemainingGuesses() <= 0}" d="M5,8 l2,2" /> <!-- Right leg -->
+  </svg>
+</div>

@@ -1,0 +1,32 @@
+@use '../../../styles.scss' as styles;
+
+.word-display {
+  margin: styles.$spacing-unit 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.letter-container {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: styles.$border-radius;
+  border: 1px solid styles.$border-color;
+  background-color: #fff;
+  color: styles.$text-color;
+  cursor: pointer;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter {
+  &:not(.empty) {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: styles.$text-color;
+  }
+}
+

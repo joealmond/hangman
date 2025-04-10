@@ -1,0 +1,26 @@
+FROM node:22.14.0-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install backend dependencies
+COPY backend/package*.json ./backend/
+RUN cd backend && npm ci
+
+# Install frontend dependencies
+COPY frontend/package*.json ./frontend/
+RUN cd frontend && npm ci
+
+# Copy configuration files
+COPY backend/nest-cli.json ./backend/
+COPY backend/tsconfig*.json ./backend/
+COPY frontend/angular.json ./frontend/
+COPY frontend/tsconfig*.json ./frontend/
+
+# Create directory for serving static files
+RUN mkdir -p /app/backend/public
+
+EXPOSE 3000
+
+# Command will be overridden by docker-compose
+CMD ["echo", "Docker container started"]

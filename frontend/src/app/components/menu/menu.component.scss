@@ -1,0 +1,18 @@
+@use '../../../styles.scss' as styles;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: styles.$spacing-unit;
+
+  a {
+    @include styles.menu-link;
+    margin-bottom: styles.$spacing-unit;
+  }
+
+  .start-game-button {
+    @include styles.secondary-button;
+    text-transform: uppercase;
+  }
+}

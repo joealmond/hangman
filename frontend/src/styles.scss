@@ -1,0 +1,66 @@
+@use 'sass:math';
+@use 'sass:color';
+
+$spacing-unit: 16px;
+$border-radius: 5px;
+$primary-color: #28a745;
+$secondary-color: #0785f3;
+$error-color: #dc3545;
+$bg-color: #f9f9f9;
+$hover-bg-color: #e9e9e9;
+$text-color: #212121;
+$border-color: #ccc;
+
+h1 {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+@mixin button-base {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: $border-radius;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}
+
+@mixin primary-button {
+  @include button-base;
+  background-color: $primary-color;
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: color.adjust($primary-color, $lightness: -5%);
+  }
+}
+
+@mixin secondary-button {
+  @include button-base;
+  background-color: $secondary-color;
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: color.adjust($secondary-color, $lightness: -5%);
+  }
+}
+
+@mixin menu-link {
+  display: inline-block;
+  background-color: $secondary-color;
+  color: white;
+  padding: math.div($spacing-unit, 2);
+  border-radius: $border-radius;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: color.adjust($secondary-color, $lightness: -5%);
+  }
+}

@@ -1,0 +1,13 @@
+<div class="word-display">
+  @if (maskedWord) {
+    @for (char of maskedWord.split(''); track $index) {
+      <div class="letter-container">
+        <div class="letter" [class.empty]="char === '_'">{{ char === '_' ? '' : char }}</div>
+      </div>
+    }
+  } @else {
+    <div class="letter-container">
+      <div class="letter">?</div>
+    </div>
+  }
+</div>

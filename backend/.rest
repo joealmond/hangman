@@ -1,0 +1,20 @@
+POST http://localhost:3000/games HTTP/1.1
+Content-Type: application/json
+
+{}
+###
+GET http://localhost:3000/games HTTP/1.1
+Content-Type: application/json
+
+{}
+###
+GET http://localhost:3000/games/1726c131-7d58-4ae1-94c6-e1c57936548f HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJnYW1lSWQiOiIxNzI2YzEzMS03ZDU4LTRhZTEtOTRjNi1lMWM1NzkzNjU0OGYiLCJpYXQiOjE3NDM2NzM1OTd9.suYq4ymVgYZpfXjZHoRnPsmvdW6iylD8A8BK54dxFUY
+
+###
+POST http://localhost:3000/games/8407c179-68e3-414c-aaf4-bf213d13e371/guesses HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJnYW1lSWQiOiI4NDA3YzE3OS02OGUzLTQxNGMtYWFmNC1iZjIxM2QxM2UzNzEiLCJpYXQiOjE3NDM2ODA3ODl9.OfFvto-cH0tLJRyg29ik2dXrW9ym0kKxnY3HWMTGBRU
+Content-Type: application/json
+
+{"letter":"b"}
+###

@@ -1,0 +1,43 @@
+@use '../../../styles.scss' as styles;
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: styles.$spacing-unit 0;
+
+  .keys-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: calc(7 * 40px + 6 * 10px); 
+    gap: 10px;
+  }
+
+  .key-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: styles.$border-radius;
+    border: 1px solid styles.$border-color;
+    background-color: styles.$bg-color;
+    color: styles.$text-color;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background-color: styles.$hover-bg-color;
+    }
+
+    &[disabled], &.guessed {
+      background-color: styles.$hover-bg-color;
+      color: #999;
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}

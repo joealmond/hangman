@@ -1,0 +1,25 @@
+@use '../../../styles.scss' as styles;
+
+.hanging-man {
+  margin: styles.$spacing-unit auto;
+}
+
+.hangman-svg {
+  margin: styles.$spacing-unit auto;
+  display: flex;
+  justify-content: center;
+  
+  svg {
+    width: 150px;
+    height: 180px;
+  }
+
+  .hangman-part {
+    stroke: #e0e0e0;
+    transition: stroke 0.3s ease;
+  }
+
+  .hangman-part.active {
+    stroke: styles.$text-color;
+  }
+}

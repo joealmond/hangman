@@ -1,0 +1,13 @@
+<div class="hangman-container">
+  <h1>Hangman Game</h1>
+  <app-hanging-man></app-hanging-man>
+  <app-masked-word [maskedWord]="getGameStateMaskedWord()"></app-masked-word>
+  <app-keyboard
+    (keyPressed)="handleGuess($event)"
+  ></app-keyboard>
+  <app-message></app-message>
+  <div class="button-container">
+    <button #newGameButton (click)="initGame()">START NEW GAME</button>
+    <button routerLink="/menu">MENU</button>
+  </div>
+</div>

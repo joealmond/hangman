@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile.dev  # We'll create a development-specific Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for live reloading
+      - ./backend/src:/app/backend/src
+      - ./backend/test:/app/backend/test
+      - ./backend/nest-cli.json:/app/backend/nest-cli.json
+      - ./backend/tsconfig.json:/app/backend/tsconfig.json
+      - ./backend/tsconfig.build.json:/app/backend/tsconfig.build.json
+      
+      # Mount frontend source for live development
+      - ./frontend/src:/app/frontend/src
+      - ./frontend/angular.json:/app/frontend/angular.json
+      - ./frontend/tsconfig.json:/app/frontend/tsconfig.json
+      
+      # Anonymous volumes to prevent overwriting node_modules
+      - /app/backend/node_modules
+      - /app/frontend/node_modules
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd /app/frontend && npm run build -- --watch & cd /app/backend && npm run start:dev"

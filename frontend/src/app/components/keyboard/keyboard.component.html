@@ -1,0 +1,15 @@
+<div class="keyboard">
+  <div class="keys-container">
+    @for (letter of alphabet; track letter) {
+      <button 
+        (click)="makeGuess(letter)" 
+        [disabled]="isLetterGuessed(letter)"
+        class="key-button"
+        [attr.tabindex]="-1"
+        [class.guessed]="isLetterGuessed(letter)">
+        {{ letter }}
+      </button>
+    }
+  </div>
+</div>
+
