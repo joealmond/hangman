@@ -59,3 +59,4 @@ jobs:
         echo "Deploying to ECS..."
         aws ecs update-service --cluster ${{ env.CLUSTER_NAME }} --service ${{ env.SERVICE_NAME }} --force-new-deployment
         echo "Deployment initiated!"
+        # commented out for now, but you can uncomment it
