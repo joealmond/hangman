@@ -11,13 +11,6 @@ async function bootstrap() {
 
   // Add this before your existing middleware
   app.use((req: Request, res: Response, next: NextFunction) => {
-    console.log(`[DEBUG] Request received:
-      - URL: ${req.url}
-      - Original URL: ${req.originalUrl}
-      - Path: ${req.path}
-      - Method: ${req.method}
-      - Headers: ${JSON.stringify(req.headers)}
-    `);
     next();
   });
 

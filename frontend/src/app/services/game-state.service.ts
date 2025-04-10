@@ -5,20 +5,15 @@ import {
   GameUpdateResponseDto,
 } from '../models/game-state.model';
 import { MessageService } from './standard-message.service';
-import { MessageType } from '../constants/game-constants';
-import { API_BASE_URL } from '../app.config';
 import { map, Observable, tap, throwError } from 'rxjs';
 import { GameHttpService } from './game-http.service';
 import { GameFactory } from './game.factory';
-import { GameMessage } from '../models/message.model';
 import { LocalStorage } from './local-storage.service';
-import { StorageProvider } from '../models/storage-provider.model';
 
 @Injectable({ providedIn: 'root' })
 export class GameStateService {
   private readonly httpService = inject(GameHttpService);
   private readonly gameFactory = inject(GameFactory);
-  private readonly apiUrl = inject(API_BASE_URL);
   private readonly state = signal<GameState>(
     this.gameFactory.createInitialGameState()
   );
